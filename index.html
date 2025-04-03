@@ -9,9 +9,11 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            text-align: justify;
+            text-align: center;
             background-color: #abe0a2;
+            font-size: 20px;
         }
+        
         .container {
             max-width: 900px;
             margin: 50px auto;
@@ -20,10 +22,27 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+        .nav-links {
+            margin-top: 20px;
+        }
+        .nav-links a {
+            display: inline-block;
+            background: #333;
+            color: white;
+            padding: 10px 20px;
+            margin: 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .nav-links a:hover {
+            background: #555;
+        }
         img {
-            width: 150px;
+            width: 220px;
             border-radius: 50%;
             margin-bottom: 20px;
+            border: 5px solid #333;
         }
         h1 {
             color: #333;
@@ -46,12 +65,15 @@
     <div class="container">
         <img src="headshot.jpg" alt="Max Beal">
         <h1>Max Beal</h1>
+        <h3>Welcome to my professional page!</h3>
         <p>I am currently a postdoctoral researcher at SSAI supporting the NASA Ocean Ecology Lab. My research combines machine learning methods with remote sensing, climate, and hydrology data to monitor and forecast water quality outcomes.</p>
         <p>During my PhD in the Water Systems and Society lab at UW-Madison, I developed some shiny apps for our harmful algae forecasting work. Click on the links below to see recent forecasts, or learn more about my research.</p>
         <h2>Projects</h2>
-        <a href="research.html">Research Projects</a>
-        <a href="outreach.html">Teaching and Outreach</a>
-        <a href="https://mrwbeal.shinyapps.io/mendotajjacyanoforecast/" target="_blank">Lake Mendota summer cyanobacteria forecast app</a>
+        <div class="nav-links">
+            <a href="research.html">Research Projects</a>
+            <a href="outreach.html">Teaching and Outreach</a>
+            <a href="https://mrwbeal.shinyapps.io/mendotajjacyanoforecast/">Mendota Forecast App</a>
+        </div>
         <h2>Links</h2>
         <a href="https://scholar.google.com/citations?user=_82EIEYAAAAJ&hl=en" target="_blank">Google Scholar</a>
         <a href="https://www.linkedin.com/in/max-beal-70b09512b/" target="_blank">LinkedIn</a>
