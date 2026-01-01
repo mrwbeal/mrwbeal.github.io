@@ -1,84 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maxwell Beal - Personal Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-            background-color: #abe0a2;
-            font-size: 20px;
-        }
-        
-        .container {
-            max-width: 900px;
-            margin: 50px auto;
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .nav-links {
-            margin-top: 20px;
-        }
-        .nav-links a {
-            display: inline-block;
-            background: #333;
-            color: white;
-            padding: 10px 20px;
-            margin: 10px;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-        .nav-links a:hover {
-            background: #555;
-        }
-        img {
-            width: 220px;
-            border-radius: 50%;
-            margin-bottom: 20px;
-            border: 5px solid #333;
-        }
-        h1 {
-            color: #333;
-        }
-        p {
-            color: #666;
-        }
-        a {
-            display: block;
-            margin: 10px 0;
-            color: #007bff;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+<meta charset="UTF-8">
+<title>Max Beal</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    background: #f2f5f7;
+}
+
+/* ====== NAV ====== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: #1f2933;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    color: white;
+    z-index: 1000;
+}
+
+.menu-btn {
+    font-size: 26px;
+    cursor: pointer;
+}
+
+/* ====== SIDE MENU ====== */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 260px;
+    height: 100%;
+    background: #111827;
+    padding-top: 80px;
+    transition: 0.3s;
+    z-index: 999;
+}
+
+.side-menu a {
+    display: block;
+    padding: 15px 25px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.side-menu a:hover {
+    background: #1f2933;
+}
+
+/* ====== MAIN CONTENT ====== */
+.main {
+    padding-top: 100px;
+    max-width: 900px;
+    margin: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.card {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.1);
+    text-align: center;
+}
+
+img {
+    width: 180px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+h1 { margin-bottom: 10px; }
+h3 { color: #555; font-weight: 400; }
+
+.section {
+    margin-top: 40px;
+    text-align: left;
+}
+
+.links a {
+    display: inline-block;
+    margin: 10px 15px 0 0;
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.links a:hover { text-decoration: underline; }
+</style>
 </head>
+
 <body>
-    <div class="container">
-        <img src="headshot.jpg" alt="Max Beal">
-        <h1>Max Beal</h1>
-        <h3>Welcome to my professional page!</h3>
-        <p>I am currently a postdoctoral researcher at SSAI supporting the NASA Ocean Ecology Lab. My research combines machine learning methods with remote sensing, climate, and hydrology data to monitor and forecast water quality outcomes.</p>
-        <p>During my PhD in the Water Systems and Society lab at UW-Madison, I developed some shiny apps for our harmful algae forecasting work. Click on the links below to see recent forecasts, or learn more about my research.</p>
-        <h2>Projects</h2>
-        <div class="nav-links">
-            <a href="research.html">Research Projects</a>
-            <a href="outreach.html">Teaching and Outreach</a>
-            <a href="https://mrwbeal.shinyapps.io/mendotajjacyanoforecast/">Mendota Forecast App</a>
-        </div>
-        <h2>Links</h2>
-        <a href="https://scholar.google.com/citations?user=_82EIEYAAAAJ&hl=en" target="_blank">Google Scholar</a>
-        <a href="https://www.linkedin.com/in/max-beal-70b09512b/" target="_blank">LinkedIn</a>
-        <h2>CV</h2>
-        <a href="MaxBeal_CV_2025.pdf" target="_blank">Download my CV</a>
+
+<div class="navbar">
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+</div>
+
+<div class="side-menu" id="menu">
+    <a href="index.html">Home</a>
+    <a href="research.html">Research</a>
+    <a href="outreach.html">Teaching & Outreach</a>
+    <a href="MaxBeal_CV_2025.pdf" target="_blank">CV</a>
+    <a href="https://mrwbeal.shinyapps.io/mendotajjacyanoforecast/" target="_blank">Mendota Forecast</a>
+</div>
+
+<div class="main">
+    <div class="card">
+
+    <!-- HERO -->
+    <img src="headshot.jpg" alt="Max Beal">
+    <h1>Max Beal</h1>
+    <h3>Postdoctoral Researcher · NASA Ocean Ecology Lab</h3>
+    <p>
+    My work takes a water systems approach to water quality monitoring and forecasting. My interests lie at the intersection of remote sensing, hydroclimatology, machine learning, and aquatic science.
+    </p>
+
+
+    <!-- CURRENT WORK -->
+    <div class="section">
+    <h2>Currently Working On</h2>
+    <p>
+    At NASA I am developing methods to merge ocean color data from multiple satellite platforms to generate a long term radiometry and chlorophyll-a timeseries for the coastal U.S. 
+    </p>
     </div>
+
+    <!-- SELECTED PUBLICATIONS -->
+    <div class="section">
+    <h2>Selected Publications</h2>
+    <ul>
+    <li>
+    <a href="https://doi.org/10.1016/j.hal.2025.103041" target="_blank">
+    Beal & Schaeffer (2025). Harmful Algae.
+    </a>
+    </li>
+
+    <li>
+    <a href="https://doi.org/10.1029/2023WR035744" target="_blank">
+    Beal et al. (2024). Water Resources Research.
+    </a>
+    </li>
+
+    <li>
+    <a href="https://doi.org/10.1016/j.watres.2022.119402" target="_blank">
+    Beal et al. (2023). Water Research.
+    </a>
+    </li>
+    </ul>
+    </div>
+
+    <!-- TOOLS & SKILLS -->
+    <div class="section">
+    <h2>Tools & Skills</h2>
+    <p>
+    <b>Languages:</b> Python, R<br>
+    <b>Engineering:</b> Water Systems, Forecast Verification, Multi-Criteria Decision Analysis, Optimization<br>
+    <b>Remote Sensing:</b> OCSSW, GIOP, Spectral Band Shifting<br>
+    <b>Statistics:</b> Timeseries Analysis, Predictive Modeling, Machine Learning<br>
+    </p>
+    </div>
+
+    <!-- TIMELINE -->
+    <div class="section">
+    <h2>Timeline</h2>
+    <ul>
+    <li><b>Mar. 2025 – Present:</b> Postdoctoral Researcher, NASA GSFC Ocean Ecology Lab/SSAI</li>
+    <li><b>Sept. 2024 - Feb 2025:</b> Federal Postdoctoral Researcher, U.S. EPA</li>
+    <li><b>2019 - 2024:</b> PhD, University of Wisconsin–Madison</li>
+    </ul>
+    </div>
+
+    <!-- CTA -->
+    <div class="section" style="text-align:center;">
+    <h2>Contact</h2>
+    <p>Interested in collaboration?</p>
+    <a href="mailto:mrwbeal@gmail.com" class="cta">Get in Touch</a>
+    </div>
+
+</div>
+
+</div>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById("menu");
+    if (menu.style.left === "0px") {
+        menu.style.left = "-260px";
+    } else {
+        menu.style.left = "0px";
+    }
+}
+</script>
+
 </body>
 </html>
