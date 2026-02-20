@@ -2,163 +2,300 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Max Beal — Research</title>
+<title>Max Beal | Research</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
+:root {
+    --nav: #1f2933;
+    --nav-dark: #111827;
+    --ink: #14212b;
+    --muted: #4b5a67;
+    --line: #dfe7ee;
+    --paper: #f4f7fa;
+    --card: #ffffff;
+    --accent: #1d6b8d;
+    --accent-soft: #e7f3f8;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: "Inter", sans-serif;
-    background: #f2f5f7;
+    color: var(--ink);
+    background:
+        radial-gradient(circle at 90% 10%, #dceaf3 0%, transparent 38%),
+        radial-gradient(circle at 8% 82%, #e7edf7 0%, transparent 42%),
+        var(--paper);
 }
 
-.container {
-    max-width: 1000px;
-    margin: 60px auto;
-    padding: 40px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,.1);
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: var(--nav);
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    color: #fff;
+    z-index: 1000;
 }
 
-h1 {
-    color: #1f2933;
+.menu-btn {
+    font-size: 26px;
+    cursor: pointer;
 }
 
-p {
-    color: #4b5563;
-    line-height: 1.7;
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 260px;
+    height: 100%;
+    background: var(--nav-dark);
+    padding-top: 80px;
+    transition: 0.3s;
+    z-index: 999;
 }
 
-.section {
-    margin-top: 50px;
+.side-menu a {
+    display: block;
+    padding: 15px 25px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.side-menu a:hover {
+    background: var(--nav);
+}
+
+.main {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 96px 20px 36px;
+}
+
+.card {
+    background: var(--card);
+    border-radius: 14px;
+    box-shadow: 0 18px 36px rgba(16, 31, 45, 0.12);
+    overflow: hidden;
+}
+
+.hero {
+    padding: 44px 34px 26px;
+    background: linear-gradient(135deg, #f5fbff 0%, #edf4fa 70%, #e3ecf4 100%);
+    border-bottom: 1px solid var(--line);
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: clamp(1.8rem, 3.7vw, 2.5rem);
+    letter-spacing: -0.02em;
+}
+
+.hero p {
+    margin: 14px 0 0;
+    max-width: 850px;
+    color: var(--muted);
+    line-height: 1.65;
+}
+
+.content {
+    padding: 14px 34px 34px;
 }
 
 .thrust {
-    padding: 30px;
-    margin-bottom: 40px;
-    border-left: 6px solid #2563eb;
-    background: #f7fafc;
-    border-radius: 8px;
+    margin-top: 24px;
+    padding: 24px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: #fff;
 }
 
 .thrust h2 {
-    margin-top: 0;
-    color: #1f2933;
+    margin: 0 0 10px;
+    font-size: 1.3rem;
 }
 
-.highlight {
+.thrust p {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.65;
+}
+
+.label {
+    margin: 14px 0 10px;
+    display: inline-block;
+    font-size: 0.88rem;
     font-weight: 600;
-    color: #111827;
+    color: #1f4f65;
+    background: var(--accent-soft);
+    padding: 7px 10px;
+    border-radius: 999px;
+}
+
+ul {
+    margin: 10px 0 0;
+    padding-left: 20px;
+    color: var(--muted);
+    line-height: 1.65;
+}
+
+.media-grid {
+    margin-top: 16px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.media-full {
+    margin-top: 16px;
+}
+
+.media-grid img,
+.media-full img {
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.media-grid img {
+    max-height: 300px;
+}
+
+.media-full img {
+    max-height: 420px;
 }
 
 a {
-    color: #2563eb;
+    color: var(--accent);
+    font-weight: 600;
     text-decoration: none;
-    font-weight: 500;
 }
 
 a:hover {
     text-decoration: underline;
 }
+
+.footer-link {
+    margin-top: 28px;
+    text-align: center;
+}
+
+.banner {
+    margin: 28px auto 0;
+    display: block;
+    width: min(100%, 780px);
+    border-radius: 10px;
+}
+
+@media (max-width: 860px) {
+    .media-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    .hero {
+        padding: 32px 22px 22px;
+    }
+
+    .content {
+        padding: 12px 18px 24px;
+    }
+
+    .thrust {
+        padding: 18px;
+    }
+}
 </style>
 </head>
-
 <body>
-
-<div class="container">
-
-<h1>Research Program</h1>
-
-<p>
-My research integrates hydroclimatology, remote sensing, and machine learning to develop
-early-warning systems and decision-support tools for aquatic ecosystems and public health.
-I focus on understanding how climate variability propagates through water systems
-to shape biological outcomes across scales.
-</p>
-
-<div class="section">
-
-<div class="thrust">
-<h2>1. Forecasting & Early Warning Systems for Aquatic Ecosystems</h2>
-
-<p>
-I develop forecasting systems that extend decision-making horizons for water managers
-from days to seasons. This work centers on harmful algal blooms, where earlier warning
-allows agencies to allocate resources, plan monitoring, and mitigate public-health risk. 
-I also work to develop spatially distributed harmful algae forecasts at satellite (300m) resolution.
-</p>
-
-<p class="highlight">Key Contributions</p>
-<ul>
-<li>Sub-seasonal cyanobacteria forecasting for Lake Mendota
-<a href="https://doi.org/10.1016/j.hal.2021.102100" target="_blank">(Harmful Algae, 2021)</a></li>
-<li>Seasonal forecasting framework
-<a href="https://doi.org/10.1080/10402381.2022.2084799" target="_blank">(Lake & Reservoir Management, 2022)</a></li>
-<li>Regional extension to 178 lakes
-<a href="https://doi.org/10.1016/j.watres.2022.119402" target="_blank">(Water Research, 2023)</a></li>
-<li>Satellite pixel scale forecasts for Florida lakes
-<a href="https://doi.org/10.1016/j.hal.2025.103041" target="_blank">(Harmful Algae, 2025)</a></li>
-</ul>
-
-<img src="WR_GraphicalAbstract.png" height="420">
+<div class="navbar">
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
 </div>
 
-<div class="thrust">
-<h2>2. Remote Sensing of Water Quality</h2>
-
-<p>
-I combine satellite imagery with in-situ monitoring to retrieve algal pigments and dissolved
-oxygen, enabling scalable lake-wide water-quality assessment. This work integrates Sentinel-2
-and Sentinel-3 observations with machine learning models.
-</p>
-
-<p class="highlight">Key Contribution</p>
-<ul>
-<li>Machine-learning retrievals of pigments and dissolved oxygen
-<a href="https://doi.org/10.1029/2023WR035744" target="_blank">(Water Resources Research, 2023)</a></li>
-</ul>
-
-<div style="display:flex; gap:40px;">
-<img src="RSWorkFlow.png" width="450">
-<img src="MendotaRSFig.jpg" height="280" style="margin-top:40px;">
-</div>
+<div class="side-menu" id="menu">
+    <a href="index.html">Home</a>
+    <a href="research.html">Research</a>
+    <a href="outreach.html">Teaching & Outreach</a>
+    <a href="Beal-Maxwell-CV-2026.pdf" target="_blank">CV</a>
+    <a href="https://mrwbeal.shinyapps.io/mendotajjacyanoforecast/" target="_blank">Mendota Forecast</a>
 </div>
 
-<div class="thrust">
-<h2>3. Climate–Ecosystem–Health Dynamics</h2>
+<div class="main">
+    <div class="card">
+        <div class="hero">
+            <h1>Research Program</h1>
+            <p>My research integrates hydroclimatology, remote sensing, and machine learning to develop early-warning systems and decision-support tools for aquatic ecosystems and public health. I focus on understanding how climate variability propagates through water systems to shape biological outcomes across scales.</p>
+        </div>
 
-<p>
-I extend hydroclimate forecasting to public-health applications, focusing on
-mosquito-borne disease risk including West Nile Virus in the U.S. and dengue fever in Colombia.
-This work demonstrates that climate-based machine-learning models outperform traditional
-approaches at seasonal timescales.
-</p>
+        <div class="content">
+            <section class="thrust">
+                <h2>1. Forecasting & Early Warning Systems for Aquatic Ecosystems</h2>
+                <p>I develop forecasting systems that extend decision-making horizons for water managers from days to seasons. This work centers on harmful algal blooms, where earlier warning allows agencies to allocate resources, plan monitoring, and mitigate public health risk. I also develop spatially distributed harmful algae forecasts at satellite (300 m) resolution.</p>
+                <span class="label">Key Contributions</span>
+                <ul>
+                    <li>Sub-seasonal cyanobacteria forecasting for Lake Mendota <a href="https://doi.org/10.1016/j.hal.2021.102100" target="_blank">(Harmful Algae, 2021)</a></li>
+                    <li>Seasonal forecasting framework <a href="https://doi.org/10.1080/10402381.2022.2084799" target="_blank">(Lake & Reservoir Management, 2022)</a></li>
+                    <li>Regional extension to 178 lakes <a href="https://doi.org/10.1016/j.watres.2022.119402" target="_blank">(Water Research, 2023)</a></li>
+                    <li>Satellite pixel-scale forecasts for Florida lakes <a href="https://doi.org/10.1016/j.hal.2025.103041" target="_blank">(Harmful Algae, 2025)</a></li>
+                </ul>
+                <div class="media-full">
+                    <img src="WR_GraphicalAbstract.png" alt="Graphical abstract for forecasting and early warning systems">
+                </div>
+            </section>
 
-<p class="highlight">Key Projects</p>
-<ul>
-<li>CDC West Nile Virus Forecasting Challenge (2023)</li>
-<li>Dengue forecasting with UW–Madison Global Health Institute & One Health Center Colombia
-<a href="https://doi.org/10.1029/2024GH001325" target="_blank">(GeoHealth, 2025)</a></li>
-</ul>
+            <section class="thrust">
+                <h2>2. Remote Sensing of Water Quality</h2>
+                <p>I combine satellite imagery with in-situ monitoring to retrieve algal pigments and dissolved oxygen, enabling scalable lake-wide water quality assessment. This work integrates Sentinel-2 and Sentinel-3 observations with machine learning models.</p>
+                <span class="label">Key Contribution</span>
+                <ul>
+                    <li>Machine-learning retrievals of pigments and dissolved oxygen <a href="https://doi.org/10.1029/2023WR035744" target="_blank">(Water Resources Research, 2023)</a></li>
+                </ul>
+                <div class="media-grid">
+                    <img src="RSWorkFlow.png" alt="Remote sensing workflow for lake water quality modeling">
+                    <img src="MendotaRSFig.jpg" alt="Lake Mendota remote sensing results">
+                </div>
+            </section>
 
-<div style="display:flex; gap:20px;">
-<img src="DengueGraphicalAbstract.jpg" width="500">
-<img src="OneHealth.JPEG" height="260" style="margin-top:20px;">
+            <section class="thrust">
+                <h2>3. Climate-Ecosystem-Health Dynamics</h2>
+                <p>I extend hydroclimate forecasting to public-health applications, focusing on mosquito-borne disease risk including West Nile virus in the U.S. and dengue fever in Colombia. This work shows climate-based machine-learning models can outperform traditional approaches at seasonal timescales.</p>
+                <span class="label">Key Projects</span>
+                <ul>
+                    <li>CDC West Nile Virus Forecasting Challenge (2023)</li>
+                    <li>Dengue forecasting with UW-Madison Global Health Institute and One Health Center Colombia <a href="https://doi.org/10.1029/2024GH001325" target="_blank">(GeoHealth, 2025)</a></li>
+                </ul>
+                <div class="media-grid">
+                    <img src="DengueGraphicalAbstract.jpg" alt="Dengue forecasting graphical abstract">
+                    <img src="OneHealth.JPEG" alt="One Health collaboration photo">
+                </div>
+            </section>
+
+            <p class="footer-link"><a href="index.html">Back to Home</a></p>
+            <img class="banner" src="Banner.png" alt="Research theme banner">
+        </div>
+    </div>
 </div>
-</div>
 
-</div>
-
-<p style="text-align:center; margin-top:40px;">
-<a href="index.html">← Back to Home</a>
-</p>
-
-<img src="Banner.png" height="200" style="display:block; margin:30px auto;">
-
-</div>
-
+<script>
+function toggleMenu() {
+    const menu = document.getElementById("menu");
+    if (menu.style.left === "0px") {
+        menu.style.left = "-260px";
+    } else {
+        menu.style.left = "0px";
+    }
+}
+</script>
 </body>
 </html>

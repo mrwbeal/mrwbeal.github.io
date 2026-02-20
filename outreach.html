@@ -1,83 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Max Beal - Teaching & Outreach</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-            background-color: #f1787a;
-        }
-        .container {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .content {
-            text-align: left;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-        h1, h2 {
-            color: #333;
-        }
-        p {
-            color: #666;
-        }
-        .project {
-            margin-bottom: 30px;
-        }
-        a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Max Beal | Teaching & Outreach</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --nav: #1f2933;
+    --nav-dark: #111827;
+    --ink: #14212b;
+    --muted: #4b5a67;
+    --line: #dfe7ee;
+    --paper: #f4f7fa;
+    --card: #ffffff;
+    --accent: #1d6b8d;
+    --accent-soft: #e7f3f8;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    color: var(--ink);
+    background:
+        radial-gradient(circle at 90% 10%, #dceaf3 0%, transparent 38%),
+        radial-gradient(circle at 8% 82%, #e7edf7 0%, transparent 42%),
+        var(--paper);
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: var(--nav);
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    color: #fff;
+    z-index: 1000;
+}
+
+.menu-btn {
+    font-size: 26px;
+    cursor: pointer;
+}
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 260px;
+    height: 100%;
+    background: var(--nav-dark);
+    padding-top: 80px;
+    transition: 0.3s;
+    z-index: 999;
+}
+
+.side-menu a {
+    display: block;
+    padding: 15px 25px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.side-menu a:hover {
+    background: var(--nav);
+}
+
+.main {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 96px 20px 36px;
+}
+
+.card {
+    background: var(--card);
+    border-radius: 14px;
+    box-shadow: 0 18px 36px rgba(16, 31, 45, 0.12);
+    overflow: hidden;
+}
+
+.hero {
+    padding: 44px 34px 26px;
+    background: linear-gradient(135deg, #f5fbff 0%, #edf4fa 70%, #e3ecf4 100%);
+    border-bottom: 1px solid var(--line);
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: clamp(1.8rem, 3.7vw, 2.5rem);
+    letter-spacing: -0.02em;
+}
+
+.hero p {
+    margin: 14px 0 0;
+    max-width: 760px;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.content {
+    padding: 14px 34px 34px;
+}
+
+.project {
+    margin-top: 24px;
+    padding: 24px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: #fff;
+}
+
+.project h2 {
+    margin: 0 0 10px;
+    font-size: 1.3rem;
+}
+
+.project p {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.65;
+}
+
+.project + .project {
+    margin-top: 18px;
+}
+
+.meta {
+    margin-top: 14px;
+    display: inline-block;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #1f4f65;
+    background: var(--accent-soft);
+    padding: 7px 10px;
+    border-radius: 999px;
+}
+
+.media-wrap {
+    margin-top: 16px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.media-wrap img {
+    display: block;
+    width: 100%;
+    max-height: 420px;
+    object-fit: cover;
+}
+
+a {
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.footer-link {
+    margin-top: 26px;
+    text-align: center;
+}
+
+@media (max-width: 700px) {
+    .hero {
+        padding: 32px 22px 22px;
+    }
+
+    .content {
+        padding: 12px 18px 24px;
+    }
+
+    .project {
+        padding: 18px;
+    }
+}
+</style>
 </head>
 <body>
-    <div class="container">
-        <h1>Teaching & Outreach</h1>
-        <p>Welcome! Here you can explore my outreach and teaching projects, including workshops, courses, and educational resources.</p>
-        
-        <div class="content">
-            <div class="project">
-                <h2>Teaching Experience</h2>
-                <p>As a PhD student, I was a teaching assistant for Civil and Environmental Engineering Decision Making: <a href="https://wss.cee.wisc.edu/wp-content/uploads/Syllabus_494_2019.pdf" target="_blank">see the Syllabus</a>. I've also filled in for a number of lectures at UW - Madison in Decision Making on topics of linear optimization, and the CEE course Hydroclimatology.</p>
-            </div>
-            
-            <div class="project">
-                <h2>Machine Learning and Remote Sensing K12 Lesson</h2>
-                <p>The exercise is designed to take 2-3 class periods. 
-                    Students mix their own samples using food coloring or take grab samples. 
-                    Then use their phones to load pictures into Google Colab, where simple machine learning models are built to relate reflectance to the concentration of "chlorophyll" in the sample. 
-                    All the materials for the lesson, and the coding notebook can be found here: <a href="https://github.com/mrwbeal/WaterQualityRSLesson" target="_blank">Lesson details</a>.</p>
-                    <div style="display: flex; justify-content: center; align-items: center;">
-                        <img src = "WQLessonPlan.png" alt="WqLessonPlanGraphic" style="display: block;" height="250;">
-                    </div>
-                <p>This work was presented at the Wisconsin Society of Science Teachers Conference in Lacrosse, WI in 2024.</p>
-                </div>
-            
-            <div class="project">
-                <h2>Public Outreach: Hydrology</h2>
-                <p>A little pandemic outreach with Madison area schools using a "Flood Tank" through the Saturday Science and <a href="https://engineeringexpo.wisc.edu" target="_blank">Engineering Expo</a> program.</p>
-            </div>
-            <img src="FloodTank.HEIC" alt="Flood Tank" style="height: 400px;">
+<div class="navbar">
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+</div>
+
+<div class="side-menu" id="menu">
+    <a href="index.html">Home</a>
+    <a href="research.html">Research</a>
+    <a href="outreach.html">Teaching & Outreach</a>
+    <a href="Beal-Maxwell-CV-2026.pdf" target="_blank">CV</a>
+    <a href="https://mrwbeal.shinyapps.io/mendotajjacyanoforecast/" target="_blank">Mendota Forecast</a>
+</div>
+
+<div class="main">
+    <div class="card">
+        <div class="hero">
+            <h1>Teaching & Outreach</h1>
+            <p>A selection of teaching, mentoring, and science communication projects focused on water systems, data literacy, and applied environmental engineering.</p>
         </div>
-        
-        <p><a href="index.html">Back to Home</a></p>
+
+        <div class="content">
+            <section class="project">
+                <h2>Teaching Experience</h2>
+                <p>During my PhD, I served as a teaching assistant for Civil and Environmental Engineering Decision Making. Course materials are available in the <a href="https://wss.cee.wisc.edu/wp-content/uploads/Syllabus_494_2019.pdf" target="_blank">course syllabus</a>. I also filled in for lectures at UW-Madison on linear optimization and hydroclimatology.</p>
+            </section>
+
+            <section class="project">
+                <h2>K-12 Lesson: Machine Learning and Remote Sensing</h2>
+                <p>This classroom activity is designed for 2-3 class periods. Students create samples with food coloring or collect grab samples, then use phone images in Google Colab to train simple models relating reflectance to chlorophyll concentration. Lesson materials and notebook are available in the <a href="https://github.com/mrwbeal/WaterQualityRSLesson" target="_blank">project repository</a>.</p>
+                <div class="media-wrap">
+                    <img src="WQLessonPlan.png" alt="Water quality lesson plan overview">
+                </div>
+                <span class="meta">Presented at the Wisconsin Society of Science Teachers Conference (La Crosse, WI, 2024)</span>
+            </section>
+
+            <section class="project">
+                <h2>Public Outreach: Hydrology Demonstrations</h2>
+                <p>I collaborated with Madison-area schools during the pandemic using a flood tank demonstration through Saturday Science and the UW-Madison <a href="https://engineeringexpo.wisc.edu" target="_blank">Engineering Expo</a> program.</p>
+                <div class="media-wrap">
+                    <img src="FloodTank.HEIC" alt="Flood tank hydrology outreach demonstration">
+                </div>
+            </section>
+
+            <p class="footer-link"><a href="index.html">Back to Home</a></p>
+        </div>
     </div>
+</div>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById("menu");
+    if (menu.style.left === "0px") {
+        menu.style.left = "-260px";
+    } else {
+        menu.style.left = "0px";
+    }
+}
+</script>
 </body>
 </html>
