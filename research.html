@@ -153,6 +153,7 @@ ul {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px;
+    align-items: start;
 }
 
 .media-full {
@@ -164,15 +165,17 @@ ul {
     display: block;
     width: 100%;
     border-radius: 10px;
-    object-fit: cover;
+    object-fit: contain;
+    background: #f8fbfd;
+    border: 1px solid var(--line);
 }
 
 .media-grid img {
-    max-height: 300px;
+    max-height: 420px;
 }
 
 .media-full img {
-    max-height: 420px;
+    max-height: 520px;
 }
 
 a {
@@ -200,6 +203,11 @@ a:hover {
 @media (max-width: 860px) {
     .media-grid {
         grid-template-columns: 1fr;
+    }
+
+    .media-grid img,
+    .media-full img {
+        max-height: none;
     }
 }
 
