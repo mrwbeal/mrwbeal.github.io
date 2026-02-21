@@ -111,21 +111,107 @@ body {
     padding: 14px 34px 34px;
 }
 
-.thrust {
+.snapshot-grid {
     margin-top: 24px;
-    padding: 24px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.snapshot-card {
+    display: block;
+    text-decoration: none;
+    border: 1px solid var(--line);
+    background: #fff;
+    border-radius: 12px;
+    padding: 14px 14px 12px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.snapshot-card:hover {
+    transform: translateY(-2px);
+    border-color: #c9dce8;
+    box-shadow: 0 8px 18px rgba(16, 31, 45, 0.08);
+    text-decoration: none;
+}
+
+.snapshot-card h3 {
+    margin: 0;
+    color: var(--ink);
+    font-size: 1rem;
+}
+
+.snapshot-card p {
+    margin: 8px 0 0;
+    font-size: 0.92rem;
+    font-weight: 400;
+    color: var(--muted);
+    line-height: 1.5;
+}
+
+.accordion {
+    margin-top: 12px;
+}
+
+.accordion-item {
+    margin-top: 12px;
     border: 1px solid var(--line);
     border-radius: 12px;
     background: #fff;
+    overflow: hidden;
 }
 
-.thrust h2 {
-    margin: 0 0 10px;
-    font-size: 1.3rem;
+.accordion-item summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 18px 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
 }
 
-.thrust p {
+.accordion-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.summary-text h2 {
     margin: 0;
+    font-size: 1.25rem;
+}
+
+.summary-text p {
+    margin: 8px 0 0;
+    color: var(--muted);
+    line-height: 1.55;
+}
+
+.toggle-icon {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    line-height: 1;
+    color: var(--accent);
+    margin-top: 2px;
+}
+
+.accordion-item[open] .toggle-icon {
+    transform: rotate(45deg);
+}
+
+.panel {
+    padding: 0 22px 22px;
+    border-top: 1px solid var(--line);
+}
+
+.panel p {
+    margin: 14px 0 0;
     color: var(--muted);
     line-height: 1.65;
 }
@@ -201,6 +287,10 @@ a:hover {
 }
 
 @media (max-width: 860px) {
+    .snapshot-grid {
+        grid-template-columns: 1fr;
+    }
+
     .media-grid {
         grid-template-columns: 1fr;
     }
@@ -220,8 +310,12 @@ a:hover {
         padding: 12px 18px 24px;
     }
 
-    .thrust {
-        padding: 18px;
+    .accordion-item summary {
+        padding: 16px;
+    }
+
+    .panel {
+        padding: 0 16px 16px;
     }
 }
 </style>
@@ -243,51 +337,92 @@ a:hover {
     <div class="card">
         <div class="hero">
             <h1>Research Program</h1>
-            <p>My research integrates hydroclimatology, remote sensing, and machine learning to develop early-warning systems and decision-support tools for aquatic ecosystems and public health. I focus on understanding how climate variability propagates through water systems to shape biological outcomes across scales.</p>
+            <p>My research focuses on forecasting and remote sensing of water quality. I build early-warning systems for harmful algal blooms and integrate satellite observations with in-situ monitoring to support operational decisions.</p>
         </div>
 
         <div class="content">
-            <section class="thrust">
-                <h2>1. Forecasting & Early Warning Systems for Aquatic Ecosystems</h2>
-                <p>I develop forecasting systems that extend decision-making horizons for water managers from days to seasons. This work centers on harmful algal blooms, where earlier warning allows agencies to allocate resources, plan monitoring, and mitigate public health risk. I also develop spatially distributed harmful algae forecasts at satellite (300 m) resolution.</p>
-                <span class="label">Key Contributions</span>
-                <ul>
-                    <li>Sub-seasonal cyanobacteria forecasting for Lake Mendota <a href="https://doi.org/10.1016/j.hal.2021.102100" target="_blank">(Harmful Algae, 2021)</a></li>
-                    <li>Seasonal forecasting framework <a href="https://doi.org/10.1080/10402381.2022.2084799" target="_blank">(Lake & Reservoir Management, 2022)</a></li>
-                    <li>Regional extension to 178 lakes <a href="https://doi.org/10.1016/j.watres.2022.119402" target="_blank">(Water Research, 2023)</a></li>
-                    <li>Satellite pixel-scale forecasts for Florida lakes <a href="https://doi.org/10.1016/j.hal.2025.103041" target="_blank">(Harmful Algae, 2025)</a></li>
-                </ul>
-                <div class="media-full">
-                    <img src="WR_GraphicalAbstract.png" alt="Graphical abstract for forecasting and early warning systems">
-                </div>
-            </section>
+            <div class="snapshot-grid">
+                <a class="snapshot-card" href="#proj-forecasting">
+                    <h3>Forecasting</h3>
+                    <p>Sub-seasonal to seasonal harmful algal bloom early warning systems.</p>
+                </a>
+                <a class="snapshot-card" href="#proj-remote-sensing">
+                    <h3>Remote Sensing</h3>
+                    <p>Satellite + in-situ retrievals for pigments and oxygen at lake scale.</p>
+                </a>
+                <a class="snapshot-card" href="#proj-operations">
+                    <h3>Operations</h3>
+                    <p>Decision-ready products built for agencies and applied monitoring programs.</p>
+                </a>
+            </div>
 
-            <section class="thrust">
-                <h2>2. Remote Sensing of Water Quality</h2>
-                <p>I combine satellite imagery with in-situ monitoring to retrieve algal pigments and dissolved oxygen, enabling scalable lake-wide water quality assessment. This work integrates Sentinel-2 and Sentinel-3 observations with machine learning models.</p>
-                <span class="label">Key Contribution</span>
-                <ul>
-                    <li>Machine-learning retrievals of pigments and dissolved oxygen <a href="https://doi.org/10.1029/2023WR035744" target="_blank">(Water Resources Research, 2023)</a></li>
-                </ul>
-                <div class="media-grid">
-                    <img src="RSWorkFlow.png" alt="Remote sensing workflow for lake water quality modeling">
-                    <img src="MendotaRSFig.jpg" alt="Lake Mendota remote sensing results">
-                </div>
-            </section>
+            <div class="accordion">
+                <details class="accordion-item" id="proj-forecasting" open>
+                    <summary>
+                        <div class="summary-text">
+                            <h2>1. Forecasting & Early Warning Systems</h2>
+                            <p>Harmful algal bloom forecasts that extend management lead time from days to seasons.</p>
+                        </div>
+                        <span class="toggle-icon">+</span>
+                    </summary>
+                    <div class="panel">
+                        <p>I develop forecasting systems that extend decision-making horizons for water managers from days to seasons. This work focuses on harmful algal blooms, where earlier warning supports planning, monitoring design, and risk communication. I also build spatially distributed forecast products at satellite-scale resolution.</p>
+                        <span class="label">Key Contributions</span>
+                        <ul>
+                            <li>Sub-seasonal cyanobacteria forecasting for Lake Mendota <a href="https://doi.org/10.1016/j.hal.2021.102100" target="_blank">(Harmful Algae, 2021)</a></li>
+                            <li>Seasonal forecasting framework <a href="https://doi.org/10.1080/10402381.2022.2084799" target="_blank">(Lake & Reservoir Management, 2022)</a></li>
+                            <li>Regional extension to 178 lakes <a href="https://doi.org/10.1016/j.watres.2022.119402" target="_blank">(Water Research, 2023)</a></li>
+                            <li>Satellite pixel-scale forecasts for Florida lakes <a href="https://doi.org/10.1016/j.hal.2025.103041" target="_blank">(Harmful Algae, 2025)</a></li>
+                        </ul>
+                        <div class="media-full">
+                            <img src="WR_GraphicalAbstract.png" alt="Graphical abstract for forecasting and early warning systems">
+                        </div>
+                    </div>
+                </details>
 
-            <section class="thrust">
-                <h2>3. Climate-Ecosystem-Health Dynamics</h2>
-                <p>I extend hydroclimate forecasting to public-health applications, focusing on mosquito-borne disease risk including West Nile virus in the U.S. and dengue fever in Colombia. This work shows climate-based machine-learning models can outperform traditional approaches at seasonal timescales.</p>
-                <span class="label">Key Projects</span>
-                <ul>
-                    <li>CDC West Nile Virus Forecasting Challenge (2023)</li>
-                    <li>Dengue forecasting with UW-Madison Global Health Institute and One Health Center Colombia <a href="https://doi.org/10.1029/2024GH001325" target="_blank">(GeoHealth, 2025)</a></li>
-                </ul>
-                <div class="media-grid">
-                    <img src="DengueGraphicalAbstract.jpg" alt="Dengue forecasting graphical abstract">
-                    <img src="OneHealth.JPEG" alt="One Health collaboration photo">
-                </div>
-            </section>
+                <details class="accordion-item" id="proj-remote-sensing">
+                    <summary>
+                        <div class="summary-text">
+                            <h2>2. Remote Sensing of Water Quality</h2>
+                            <p>Satellite-enabled retrievals of water quality indicators linked to field observations.</p>
+                        </div>
+                        <span class="toggle-icon">+</span>
+                    </summary>
+                    <div class="panel">
+                        <p>I combine satellite imagery with in-situ monitoring to retrieve algal pigments and dissolved oxygen, enabling scalable lake-wide water quality assessment. This work integrates Sentinel-2 and Sentinel-3 observations with machine learning models for robust, transferable workflows.</p>
+                        <span class="label">Key Contribution</span>
+                        <ul>
+                            <li>Machine-learning retrievals of pigments and dissolved oxygen <a href="https://doi.org/10.1029/2023WR035744" target="_blank">(Water Resources Research, 2023)</a></li>
+                        </ul>
+                        <div class="media-grid">
+                            <img src="RSWorkFlow.png" alt="Remote sensing workflow for lake water quality modeling">
+                            <img src="MendotaRSFig.jpg" alt="Lake Mendota remote sensing results">
+                        </div>
+                    </div>
+                </details>
+
+                <details class="accordion-item" id="proj-operations">
+                    <summary>
+                        <div class="summary-text">
+                            <h2>3. Translating Models into Operations</h2>
+                            <p>Decision-ready forecast and remote sensing products for applied lake management.</p>
+                        </div>
+                        <span class="toggle-icon">+</span>
+                    </summary>
+                    <div class="panel">
+                        <p>A core goal of my research is operational impact. I build workflows that connect model outputs and Earth-observation products to agency decision points, including sampling prioritization, risk communication, and ongoing performance evaluation.</p>
+                        <span class="label">Operational Priorities</span>
+                        <ul>
+                            <li>Extend forecast horizons while preserving practical skill</li>
+                            <li>Deliver lake- and pixel-scale products for targeted monitoring</li>
+                            <li>Combine reproducible modeling workflows with routine observation streams</li>
+                        </ul>
+                        <div class="media-full">
+                            <img src="Themes.png" alt="Core themes in forecasting and remote sensing for water quality">
+                        </div>
+                    </div>
+                </details>
+            </div>
 
             <p class="footer-link"><a href="index.html">Back to Home</a></p>
             <img class="banner" src="Banner.png" alt="Research theme banner">
@@ -304,6 +439,35 @@ function toggleMenu() {
         menu.style.left = "0px";
     }
 }
+
+function openAccordionFromHash() {
+    if (!window.location.hash) return;
+    const target = document.querySelector(window.location.hash);
+    if (!target || target.tagName !== "DETAILS") return;
+    closeOtherAccordions(target);
+    target.open = true;
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function closeOtherAccordions(activeItem) {
+    const items = document.querySelectorAll(".accordion-item");
+    items.forEach((item) => {
+        if (item !== activeItem) item.open = false;
+    });
+}
+
+function enableSingleOpenAccordion() {
+    const items = document.querySelectorAll(".accordion-item");
+    items.forEach((item) => {
+        item.addEventListener("toggle", () => {
+            if (item.open) closeOtherAccordions(item);
+        });
+    });
+}
+
+enableSingleOpenAccordion();
+window.addEventListener("hashchange", openAccordionFromHash);
+window.addEventListener("load", openAccordionFromHash);
 </script>
 </body>
 </html>
