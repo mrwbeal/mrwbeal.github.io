@@ -246,6 +246,10 @@ ul {
     margin-top: 16px;
 }
 
+.media-feature {
+    margin: 18px 0 0;
+}
+
 .media-grid img,
 .media-full img {
     display: block;
@@ -262,6 +266,35 @@ ul {
 
 .media-full img {
     max-height: 520px;
+}
+
+.media-feature figcaption {
+    margin-top: 10px;
+    font-size: 0.95rem;
+    color: var(--muted);
+    line-height: 1.55;
+}
+
+.forecast-gif {
+    max-height: 680px;
+}
+
+.inline-disclosure {
+    margin-top: 14px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: #fbfdff;
+}
+
+.inline-disclosure summary {
+    cursor: pointer;
+    padding: 10px 12px;
+    font-weight: 600;
+    color: #1f4f65;
+}
+
+.inline-disclosure-content {
+    padding: 0 12px 12px;
 }
 
 a {
@@ -366,17 +399,29 @@ a:hover {
                         <span class="toggle-icon">+</span>
                     </summary>
                     <div class="panel">
-                        <p>I develop forecasting systems that extend decision-making horizons for water managers from days to seasons. This work focuses on harmful algal blooms, where earlier warning supports planning, monitoring design, and risk communication. I also build spatially distributed forecast products at satellite-scale resolution.</p>
-                        <span class="label">Key Contributions</span>
+                        <p>I develop forecasting systems that extend decision-making horizons for water managers from days to seasons. This work focuses on harmful algal blooms, where earlier warning can inform monitoring strategies, beach closings, and risk communication.</p>
+                        <span class="label">Contributions</span>
                         <ul>
                             <li>Sub-seasonal cyanobacteria forecasting for Lake Mendota <a href="https://doi.org/10.1016/j.hal.2021.102100" target="_blank">(Harmful Algae, 2021)</a></li>
                             <li>Seasonal forecasting framework <a href="https://doi.org/10.1080/10402381.2022.2084799" target="_blank">(Lake & Reservoir Management, 2022)</a></li>
                             <li>Regional extension to 178 lakes <a href="https://doi.org/10.1016/j.watres.2022.119402" target="_blank">(Water Research, 2023)</a></li>
                             <li>Satellite pixel-scale forecasts for Florida lakes <a href="https://doi.org/10.1016/j.hal.2025.103041" target="_blank">(Harmful Algae, 2025)</a></li>
                         </ul>
-                        <div class="media-full">
-                            <img src="WR_GraphicalAbstract.png" alt="Graphical abstract for forecasting and early warning systems">
-                        </div>
+                        <figure class="media-full media-feature">
+                            <figcaption>One of my projects is extending harmful algae forecasts in space. With satellite-based chlorophyll observations, forecasts can be developed at the pixel-scale.</figcaption>
+                            <figcaption>This animation highlights pixel-scale chlorophyll forecast performance across Florida lakes and shows how the inclusion of additional environmental data improve forecast skill over persistence.</figcaption>
+                            <img class="forecast-gif" src="florida_chl_accuracy_newdata.gif" alt="Animation of forecast accuracy across Florida lakes using new data">
+                            <figcaption>Click on the buttons below to learn about other facets of my forecasting work.</figcaption>
+
+                        </figure>
+                        <details class="inline-disclosure">
+                            <summary>Season-ahead Forecasts of Harmful Algae</summary>
+                            <div class="inline-disclosure-content">
+                                <div class="media-full">
+                                    <img src="WR_GraphicalAbstract.png" alt="Graphical abstract for forecasting and early warning systems">
+                                </div>
+                            </div>
+                        </details>
                     </div>
                 </details>
 
@@ -390,7 +435,7 @@ a:hover {
                     </summary>
                     <div class="panel">
                         <p>I combine satellite imagery with in-situ monitoring to retrieve algal pigments and dissolved oxygen, enabling scalable lake-wide water quality assessment. This work integrates Sentinel-2 and Sentinel-3 observations with machine learning models for robust, transferable workflows.</p>
-                        <span class="label">Key Contribution</span>
+                        <span class="label">Contribution</span>
                         <ul>
                             <li>Machine-learning retrievals of pigments and dissolved oxygen <a href="https://doi.org/10.1029/2023WR035744" target="_blank">(Water Resources Research, 2023)</a></li>
                         </ul>
