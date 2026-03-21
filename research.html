@@ -297,6 +297,33 @@ ul {
     padding: 0 12px 12px;
 }
 
+.project-outline {
+    margin-top: 18px;
+    display: grid;
+    gap: 14px;
+}
+
+.project-template {
+    border: 1px dashed #bfd3df;
+    border-radius: 12px;
+    background: #fbfdff;
+    padding: 16px 18px;
+}
+
+.project-template h3 {
+    margin: 0;
+    font-size: 1.02rem;
+    color: var(--ink);
+}
+
+.project-template p {
+    margin: 8px 0 0;
+}
+
+.project-template ul {
+    margin-top: 10px;
+}
+
 a {
     color: var(--accent);
     font-weight: 600;
@@ -383,9 +410,9 @@ a:hover {
                     <h3>Remote Sensing</h3>
                     <p>Satellite + in-situ retrievals for pigments and oxygen at lake scale.</p>
                 </a>
-                <a class="snapshot-card" href="#proj-operations">
-                    <h3>Operations</h3>
-                    <p>Decision-ready products built for agencies and applied monitoring programs.</p>
+                <a class="snapshot-card" href="#proj-s2s">
+                    <h3>Subseasonal to Seasonal Forecasting</h3>
+                    <p>An outline for project summaries spanning weeks to seasons.</p>
                 </a>
             </div>
 
@@ -393,7 +420,7 @@ a:hover {
                 <details class="accordion-item" id="proj-forecasting" open>
                     <summary>
                         <div class="summary-text">
-                            <h2>1. Forecasting & Early Warning Systems</h2>
+                            <h2>1. Algae Forecasting & Early Warning Systems</h2>
                             <p>Harmful algal bloom forecasts that extend management lead time from days to seasons.</p>
                         </div>
                         <span class="toggle-icon">+</span>
@@ -446,24 +473,36 @@ a:hover {
                     </div>
                 </details>
 
-                <details class="accordion-item" id="proj-operations">
+                <details class="accordion-item" id="proj-s2s">
                     <summary>
                         <div class="summary-text">
-                            <h2>3. Translating Models into Operations</h2>
-                            <p>Decision-ready forecast and remote sensing products for applied lake management.</p>
+                            <h2>3. Subseasonal to Seasonal Forecasting</h2>
+                            <p>A placeholder section for longer-lead forecasting projects, methods, and case studies.</p>
                         </div>
                         <span class="toggle-icon">+</span>
                     </summary>
                     <div class="panel">
-                        <p>A core goal of my research is operational impact. I build workflows that connect model outputs and Earth-observation products to agency decision points, including sampling prioritization, risk communication, and ongoing performance evaluation.</p>
-                        <span class="label">Operational Priorities</span>
-                        <ul>
-                            <li>Extend forecast horizons while preserving practical skill</li>
-                            <li>Deliver lake- and pixel-scale products for targeted monitoring</li>
-                            <li>Combine reproducible modeling workflows with routine observation streams</li>
-                        </ul>
-                        <div class="media-full">
-                            <img src="Themes.png" alt="Core themes in forecasting and remote sensing for water quality">
+                        <p>This section is set up as a framework for future research project writeups focused on subseasonal-to-seasonal forecasting. You can fill in each project as the page evolves.</p>
+                        <span class="label">Project Outline</span>
+                        <div class="project-outline">
+                            <section class="project-template">
+                                <h3>Project Title</h3>
+                                <p>Brief 1-2 sentence summary of the forecasting question, system, or application.</p>
+                                <ul>
+                                    <li>Motivation or management relevance</li>
+                                    <li>Forecast horizon, methods, or datasets</li>
+                                    <li>Main result, application, or paper link</li>
+                                </ul>
+                            </section>
+                            <section class="project-template">
+                                <h3>Project Title</h3>
+                                <p>Brief 1-2 sentence summary of the forecasting question, system, or application.</p>
+                                <ul>
+                                    <li>Motivation or management relevance</li>
+                                    <li>Forecast horizon, methods, or datasets</li>
+                                    <li>Main result, application, or paper link</li>
+                                </ul>
+                            </section>
                         </div>
                     </div>
                 </details>
