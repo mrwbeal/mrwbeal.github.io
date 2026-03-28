@@ -278,6 +278,24 @@ body {
     background: #f8fbfd;
 }
 
+.feed-media img.landscape {
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+}
+
+.feed-media img.portrait {
+    aspect-ratio: 4 / 5;
+    max-height: 460px;
+    object-fit: cover;
+}
+
+.feed-media img.figure {
+    aspect-ratio: auto;
+    max-height: 520px;
+    object-fit: contain;
+    padding: 10px;
+}
+
 .caption {
     margin-top: 10px;
     font-size: 0.93rem;
@@ -356,24 +374,14 @@ a:hover {
         <div class="hero">
             <p class="eyebrow">Field Notes</p>
             <h1>Updates Feed</h1>
-            <p>This page is set up as a running feed for lab milestones, conference travel, fieldwork, photos, and quick notes. New posts can be added to the top so the page reads like a simple academic timeline.</p>
-            <div class="hero-note">Add a new entry by copying a single <code>.feed-item</code> block and updating the text, date, and image.</div>
+            <p>This page is set up as a running feed for milestones, conference travel, fieldwork, photos, and quick notes.</p>
         </div>
 
         <div class="content">
             <div class="intro-grid">
                 <section class="panel">
                     <h2>What This Page Is For</h2>
-                    <p>Use this space for lighter-weight updates that do not need a full project page: conference attendance, new collaborations, paper milestones, outreach events, screenshots, travel photos, or short highlights from ongoing work.</p>
-                </section>
-
-                <section class="panel">
-                    <h2>Posting Ideas</h2>
-                    <ul class="tip-list">
-                        <li>Share one photo with a short caption from a conference or workshop.</li>
-                        <li>Note when a paper is accepted, submitted, or published.</li>
-                        <li>Highlight new datasets, talks, or outreach events.</li>
-                    </ul>
+                    <p>I update this page periodically to showcase presentations, publications, and new research.</p>
                 </section>
             </div>
 
@@ -381,19 +389,66 @@ a:hover {
                 <article class="feed-item">
                     <div class="feed-header">
                         <div>
-                            <h3>Presented New Work at Ocean Sciences</h3>
+                            <h3>New Paper! Evaluating satellite and modeled lake surface water temperature across the contiguous United States</h3>
+                            <h4>Authors: Blake A Schaeffer, Hannah Ferriby, Wilson Salls, Natalie Reynolds, Jeffrey W Hollister, Betty Kreakie, Stephen Shivers, Brent Johnson, Olivia Cronin-Golomb, Kate Meyers, Maxwell Beal</h4>
+                            <div class="meta">
+                                <span class="pill">Publication</span>
+                                <span class="pill warm">Research</span>
+                            </div>
+                        </div>
+                        <div class="date">March 2026</div>
+                    </div>
+                    <p>At the EPA, I contributed to the valdiation of a U.S. water temperature product for Sentinel-3 resolved lakes. Using a random forest approach, Landsat ARD surface temperature, and PRISM air temperature, water temperature can be estimated quickly and accurately. This product is used in the pixel scale forecasting work highlighted below! <a href="https://doi.org/10.1007/s10750-026-06178-z">Access here</a></p>
+                </article>
+                
+                <article class="feed-item">
+                    <div class="feed-header">
+                        <div>
+                            <h3>New Paper! Pixel-scale satellite forecasting of cyanobacteria in Florida lakes</h3>
+                            <h4>Authors: Maxwell Beal, Blake Schaeffer</h4>
+                            <div class="meta">
+                                <span class="pill">Publication</span>
+                                <span class="pill warm">Research</span>
+                            </div>
+                        </div>
+                        <div class="date">February 2026</div>
+                    </div>
+                    <p>This work, from my time at the EPA, explores the feasibility of 1-,2-,and 3- week lead forecasts at the Sentinel-3 pixel scale (300m) <a href="Beal_Schaeffer.pdf">Download here</a></p>
+                </article>
+
+                <article class="feed-item">
+                    <div class="feed-header">
+                        <div>
+                            <h3>Presented the poster "Development of a Merged Ocean Color Reflectance and Chlorophyll-a Product for U.S. Coastal Waters" at the International Ocean Colour Meeting</h3>
                             <div class="meta">
                                 <span class="pill">Conference</span>
                                 <span class="pill warm">Talk / Poster</span>
                             </div>
                         </div>
-                        <div class="date">March 2026</div>
+                        <div class="date">December 2025</div>
                     </div>
-                    <p>I shared recent work on satellite water quality products and had great conversations about harmonizing observations across sensors. This is a nice example of the kind of short conference note that fits well in the feed.</p>
+                    <p>I attended the IOCS meeting in Darmstadt, Germany and presented progress for our merged ocean colour radiance and chlorophyll-a product.</p>
                     <div class="feed-media single">
-                        <img src="Banner.png" alt="Conference or presentation placeholder image">
+                        <img class="portrait" src="IOCS_Dec25.JPG" alt="Conference or presentation placeholder image">
                     </div>
-                    <p class="caption">Swap this image with a conference photo, poster snapshot, or presentation slide.</p>
+                    <p class="caption"></p>
+                </article>
+
+                <article class="feed-item">
+                    <div class="feed-header">
+                        <div>
+                            <h3>PACE Hackweek 2025</h3>
+                            <div class="meta">
+                                <span class="pill">Workshop</span>
+                            </div>
+                        </div>
+                        <div class="date">August 2025</div>
+                    </div>
+                    <p>I participated in the 2025 PACE Hackweek at UMBC, learning to work with new PACE OCI, SPEXOne, and HARP2 data.</p>
+                    <div class="feed-media single">
+                        <img class="portrait" src="Hackweek2025.JPG" alt="Conference or presentation placeholder image">
+                    </div>
+                    <p class="caption"></p>
                 </article>
 
                 <article class="feed-item">
@@ -405,29 +460,17 @@ a:hover {
                                 <span class="pill">Collaboration</span>
                             </div>
                         </div>
-                        <div class="date">January 2026</div>
+                        <div class="date">May 2024</div>
                     </div>
-                    <p>This entry shows how you can document a visit, workshop, or field campaign. A few sentences are enough to explain what happened, why it mattered, and what came out of it.</p>
+                    <p>Great trip to Medellín to meet with dengue forecasting collaborators and tour the One Health Center - Colombia.</p>
                     <div class="feed-media">
-                        <img src="OneHealth.JPEG" alt="Collaborative event or workshop photo">
-                        <img src="Themes.png" alt="Project or meeting visual">
+                        <img class="landscape" src="OneHealth.JPEG" alt="Tour of the One Health Center Lab">
+                        <img class="landscape" src="MedellinColombia.jpg" alt="Comuna 13, Medellin">
                     </div>
-                    <p class="caption">Two-image posts work well for combining a people photo with a slide, map, or figure.</p>
+                    <p class="caption"></p>
                 </article>
 
-                <article class="feed-item">
-                    <div class="feed-header">
-                        <div>
-                            <h3>Paper Milestone or Project Update</h3>
-                            <div class="meta">
-                                <span class="pill">Publication</span>
-                                <span class="pill warm">Research</span>
-                            </div>
-                        </div>
-                        <div class="date">November 2025</div>
-                    </div>
-                    <p>A feed post can also be text-forward. For example: a manuscript was accepted, a preprint is live, or a new tool is available. You can add a DOI, repository, or project link directly in the description when you are ready.</p>
-                </article>
+ 
             </div>
 
             <p class="footer-link"><a href="index.html">Back to Home</a></p>
