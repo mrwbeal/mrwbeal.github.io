@@ -4,22 +4,32 @@
 <meta charset="UTF-8">
 <title>Max Beal | Research</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
 <style>
 :root {
     --nav: #1f2933;
     --nav-dark: #111827;
     --ink: #14212b;
-    --muted: #4b5a67;
+    --muted: #536272;
     --line: #dfe7ee;
     --paper: #f4f7fa;
     --card: #ffffff;
     --accent: #1d6b8d;
+    --accent-dark: #164f69;
     --accent-soft: #e7f3f8;
+    --sage: #e9f2ec;
+    --sage-ink: #315743;
+    --gold: #f7efe0;
+    --gold-ink: #765427;
 }
 
 * {
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 88px;
 }
 
 body {
@@ -27,8 +37,8 @@ body {
     font-family: "Inter", sans-serif;
     color: var(--ink);
     background:
-        radial-gradient(circle at 90% 10%, #dceaf3 0%, transparent 38%),
-        radial-gradient(circle at 8% 82%, #e7edf7 0%, transparent 42%),
+        radial-gradient(circle at 92% 12%, #dceaf3 0%, transparent 34%),
+        radial-gradient(circle at 8% 84%, #e8eff8 0%, transparent 38%),
         var(--paper);
 }
 
@@ -76,306 +86,331 @@ body {
 }
 
 .main {
-    max-width: 1040px;
+    max-width: 1540px;
     margin: 0 auto;
-    padding: 96px 20px 36px;
-}
-
-.card {
-    background: var(--card);
-    border-radius: 14px;
-    box-shadow: 0 18px 36px rgba(16, 31, 45, 0.12);
-    overflow: hidden;
+    padding: 96px 28px 44px;
 }
 
 .hero {
-    padding: 44px 34px 26px;
-    background: linear-gradient(135deg, #f5fbff 0%, #edf4fa 70%, #e3ecf4 100%);
+    padding: 42px 0 30px;
     border-bottom: 1px solid var(--line);
 }
 
-.hero h1 {
+.eyebrow {
     margin: 0;
-    font-size: clamp(1.8rem, 3.7vw, 2.5rem);
-    letter-spacing: -0.02em;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.hero h1 {
+    margin: 10px 0 0;
+    max-width: 980px;
+    font-size: clamp(2.3rem, 4vw, 3.4rem);
 }
 
 .hero p {
-    margin: 14px 0 0;
-    max-width: 850px;
+    margin: 16px 0 0;
+    max-width: 980px;
     color: var(--muted);
-    line-height: 1.65;
+    font-size: 1.08rem;
+    line-height: 1.7;
 }
 
-.content {
-    padding: 14px 34px 34px;
-}
-
-.snapshot-grid {
-    margin-top: 24px;
+.research-shell {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 14px;
+    grid-template-columns: 300px minmax(0, 1fr);
+    gap: 40px;
+    align-items: start;
+    padding-top: 28px;
 }
 
-.snapshot-card {
-    display: block;
-    text-decoration: none;
+.focus-nav {
+    position: sticky;
+    top: 84px;
     border: 1px solid var(--line);
-    background: #fff;
-    border-radius: 12px;
-    padding: 14px 14px 12px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-}
-
-.snapshot-card:hover {
-    transform: translateY(-2px);
-    border-color: #c9dce8;
-    box-shadow: 0 8px 18px rgba(16, 31, 45, 0.08);
-    text-decoration: none;
-}
-
-.snapshot-card h3 {
-    margin: 0;
-    color: var(--ink);
-    font-size: 1rem;
-}
-
-.snapshot-card p {
-    margin: 8px 0 0;
-    font-size: 0.92rem;
-    font-weight: 400;
-    color: var(--muted);
-    line-height: 1.5;
-}
-
-.accordion {
-    margin-top: 12px;
-}
-
-.accordion-item {
-    margin-top: 12px;
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    background: #fff;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.82);
+    box-shadow: 0 10px 24px rgba(16, 31, 45, 0.06);
     overflow: hidden;
 }
 
-.accordion-item summary {
-    list-style: none;
-    cursor: pointer;
-    padding: 18px 22px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 12px;
-}
-
-.accordion-item summary::-webkit-details-marker {
-    display: none;
-}
-
-.summary-text h2 {
+.focus-nav h2 {
     margin: 0;
-    font-size: 1.25rem;
-}
-
-.summary-text p {
-    margin: 8px 0 0;
+    padding: 18px 18px 12px;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
     color: var(--muted);
-    line-height: 1.55;
 }
 
-.toggle-icon {
-    width: 28px;
-    height: 28px;
-    min-width: 28px;
-    border-radius: 50%;
-    border: 1px solid var(--line);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.15rem;
-    line-height: 1;
-    color: var(--accent);
-    margin-top: 2px;
-}
-
-.accordion-item[open] .toggle-icon {
-    transform: rotate(45deg);
-}
-
-.panel {
-    padding: 0 22px 22px;
+.focus-nav a {
+    display: block;
+    padding: 15px 18px;
     border-top: 1px solid var(--line);
-}
-
-.panel p {
-    margin: 14px 0 0;
-    color: var(--muted);
-    line-height: 1.65;
-}
-
-.label {
-    margin: 14px 0 10px;
-    display: inline-block;
-    font-size: 0.88rem;
+    color: var(--ink);
+    font-size: 1.03rem;
     font-weight: 600;
-    color: #1f4f65;
-    background: var(--accent-soft);
-    padding: 7px 10px;
-    border-radius: 999px;
+    text-decoration: none;
 }
 
-ul {
-    margin: 10px 0 0;
-    padding-left: 20px;
+.focus-nav a:hover {
+    background: var(--accent-soft);
+    color: var(--accent-dark);
+    text-decoration: none;
+}
+
+.research-feed {
+    display: grid;
+    gap: 28px;
+}
+
+.focus-section {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 14px 30px rgba(16, 31, 45, 0.08);
+    overflow: hidden;
+}
+
+.section-header {
+    padding: 32px 36px 26px;
+    border-bottom: 1px solid var(--line);
+    background: linear-gradient(135deg, #ffffff 0%, #f2f8fb 100%);
+}
+
+.section-kicker {
+    margin: 0;
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.section-header h2 {
+    margin: 8px 0 0;
+    font-size: clamp(1.7rem, 3vw, 2.35rem);
+}
+
+.section-header p {
+    margin: 12px 0 0;
+    max-width: 920px;
     color: var(--muted);
+    font-size: 1.08rem;
     line-height: 1.65;
 }
 
-.media-grid {
-    margin-top: 16px;
+.section-body {
+    padding: 30px 36px 36px;
+}
+
+.split {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 16px;
+    grid-template-columns: minmax(0, 1fr) minmax(380px, 1.08fr);
+    gap: 30px;
     align-items: start;
 }
 
-.media-full {
+.text-block p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 1.06rem;
+    line-height: 1.7;
+}
+
+.text-block p + p {
+    margin-top: 14px;
+}
+
+.tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
     margin-top: 16px;
 }
 
-.media-feature {
-    margin: 18px 0 0;
+.tag {
+    display: inline-flex;
+    align-items: center;
+    min-height: 30px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: #1f4f65;
+    font-size: 0.9rem;
+    font-weight: 700;
 }
 
-.media-grid img,
-.media-full img {
+.tag.sage {
+    background: var(--sage);
+    color: var(--sage-ink);
+}
+
+.tag.gold {
+    background: var(--gold);
+    color: var(--gold-ink);
+}
+
+.media-panel {
+    margin: 0;
+}
+
+.media-panel img {
     display: block;
     width: 100%;
-    border-radius: 10px;
-    object-fit: contain;
-    background: #f8fbfd;
-    border: 1px solid var(--line);
-}
-
-.media-grid img {
-    max-height: 420px;
-}
-
-.media-full img {
     max-height: 520px;
+    object-fit: contain;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #f8fbfd;
 }
 
-.media-feature figcaption {
-    margin-top: 10px;
-    font-size: 0.95rem;
-    color: var(--muted);
-    line-height: 1.55;
-}
-
-.forecast-gif {
+.media-panel img.animation {
     max-height: 680px;
 }
 
-.inline-disclosure {
-    margin-top: 14px;
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    background: #fbfdff;
-}
-
-.inline-disclosure summary {
-    cursor: pointer;
-    padding: 10px 12px;
-    font-weight: 600;
-    color: #1f4f65;
-}
-
-.inline-disclosure-content {
-    padding: 0 12px 12px;
-}
-
-.project-outline {
-    margin-top: 18px;
+.media-grid {
     display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 14px;
 }
 
-.project-template {
-    border: 1px dashed #bfd3df;
-    border-radius: 12px;
-    background: #fbfdff;
-    padding: 16px 18px;
+.caption {
+    margin: 10px 0 0;
+    color: var(--muted);
+    font-size: 0.98rem;
+    line-height: 1.55;
 }
 
-.project-template h3 {
+.paper-list {
+    margin-top: 24px;
+    display: grid;
+    gap: 12px;
+}
+
+.paper-list h3 {
     margin: 0;
-    font-size: 1.02rem;
-    color: var(--ink);
+    font-size: 1.16rem;
 }
 
-.project-template p {
+.paper {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fff;
+    padding: 18px 20px;
+}
+
+.paper h4 {
+    margin: 0;
+    font-size: 1.08rem;
+    line-height: 1.45;
+}
+
+.paper p {
     margin: 8px 0 0;
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.55;
 }
 
-.project-template ul {
-    margin-top: 10px;
+.paper-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.paper-meta span,
+.paper-meta a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 28px;
+    padding: 5px 9px;
+    border-radius: 999px;
+    background: #f4f7fa;
+    color: var(--muted);
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.paper-meta a {
+    background: var(--accent-soft);
+    color: var(--accent-dark);
+}
+
+.paper-meta a:hover {
+    text-decoration: underline;
+}
+
+.add-note {
+    margin-top: 22px;
+    padding: 16px;
+    border: 1px dashed #b8ccd8;
+    border-radius: 8px;
+    background: #fbfdff;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.footer-link {
+    margin: 30px 0 0;
+    text-align: center;
 }
 
 a {
     color: var(--accent);
     font-weight: 600;
-    text-decoration: none;
 }
 
-a:hover {
-    text-decoration: underline;
-}
-
-.footer-link {
-    margin-top: 28px;
-    text-align: center;
-}
-
-.banner {
-    margin: 28px auto 0;
-    display: block;
-    width: min(100%, 780px);
-    border-radius: 10px;
-}
-
-@media (max-width: 860px) {
-    .snapshot-grid {
+@media (max-width: 900px) {
+    .research-shell {
         grid-template-columns: 1fr;
     }
 
-    .media-grid {
-        grid-template-columns: 1fr;
+    .focus-nav {
+        position: static;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
-    .media-grid img,
-    .media-full img {
-        max-height: none;
+    .focus-nav h2 {
+        grid-column: 1 / -1;
+    }
+
+    .focus-nav a {
+        border-top: 1px solid var(--line);
+    }
+
+    .split {
+        grid-template-columns: 1fr;
     }
 }
 
 @media (max-width: 700px) {
+    .main {
+        padding: 86px 14px 32px;
+    }
+
     .hero {
-        padding: 32px 22px 22px;
+        padding: 30px 0 24px;
     }
 
-    .content {
-        padding: 12px 18px 24px;
+    .focus-nav {
+        grid-template-columns: 1fr;
     }
 
-    .accordion-item summary {
-        padding: 16px;
+    .section-header,
+    .section-body {
+        padding-left: 18px;
+        padding-right: 18px;
     }
 
-    .panel {
-        padding: 0 16px 16px;
+    .media-grid {
+        grid-template-columns: 1fr;
     }
 }
 </style>
@@ -389,147 +424,177 @@ a:hover {
     <a href="index.html">Home</a>
     <a href="research.html">Research</a>
     <a href="updates.html">Updates</a>
-    <a href="outreach.html">Teaching & Outreach</a>
+    <a href="outreach.html">Teaching &amp; Outreach</a>
     <a href="Beal-Maxwell-CV-2026.pdf" target="_blank">CV</a>
     <a href="https://mrwbeal.shinyapps.io/mendotajjacyanoforecast/" target="_blank">Mendota Forecast</a>
 </div>
 
-<div class="main">
-    <div class="card">
-        <div class="hero">
-            <h1>Research</h1>
-            <p>My research focuses on forecasting and remote sensing of water quality. I develop multi-satellite water quality products, investigate hydroclimate–water quality relationships, and build forecasting systems to predict water quality extremes from weeks to seasons.</p>
-        </div>
+<main class="main">
+    <header class="hero">
+        <p class="eyebrow">Research</p>
+        <h1>Research Themes</h1>
+        <p>My research focuses on forecasting and remote sensing of water quality. I develop multi-satellite water quality products, investigate hydroclimate-water quality relationships, and build forecasting systems to predict water quality extremes from weeks to seasons.</p>
+    </header>
 
-        <div class="content">
-            <div class="snapshot-grid">
-                <a class="snapshot-card" href="#proj-forecasting">
-                    <h3>Forecasting</h3>
-                    <p>Sub-seasonal to seasonal harmful algal bloom early warning systems.</p>
-                </a>
-                <a class="snapshot-card" href="#proj-remote-sensing">
-                    <h3>Remote Sensing</h3>
-                    <p>Satellite + in-situ retrievals for pigments and oxygen at lake scale.</p>
-                </a>
-                <a class="snapshot-card" href="#proj-s2s">
-                    <h3>Hydroclimatology and Ecosystem Extremes</h3>
-                    <p>Other projects dealing with climate, water, and extreme events.</p>
-                </a>
-            </div>
+    <div class="research-shell">
+        <nav class="focus-nav" aria-label="Research focus areas">
+            <h2>Focus Areas</h2>
+            <a href="#forecasting">Algae Forecasting</a>
+            <a href="#remote-sensing">Remote Sensing</a>
+            <a href="#ecosystem-extremes">Ecosystem Extremes</a>
+        </nav>
 
-            <div class="accordion">
-                <details class="accordion-item" id="proj-forecasting" open>
-                    <summary>
-                        <div class="summary-text">
-                            <h2>1. Algae Forecasting & Early Warning Systems</h2>
-                            <p>Harmful algal bloom forecasts that extend management lead time from days to seasons.</p>
+        <div class="research-feed">
+            <section class="focus-section" id="forecasting">
+                <div class="section-header">
+                    <p class="section-kicker">Focus Area 01</p>
+                    <h2>Algae Forecasting and Early Warning Systems</h2>
+                    <p>Harmful algal bloom forecasts that extend management lead time from days to seasons.</p>
+                </div>
+                <div class="section-body">
+                    <div class="split">
+                        <div class="text-block">
+                            <p>I develop forecasting systems that extend decision-making horizons for water managers from days to seasons. This work focuses on harmful algal blooms, where earlier warning can inform monitoring strategies, beach closings, and risk communication.</p>
+                            <p>One of my projects is extending harmful algae forecasts in space. With satellite-based chlorophyll observations, forecasts can be developed at the pixel-scale.</p>
+                            <div class="tag-row">
+                                <span class="tag">Harmful algal blooms</span>
+                                <span class="tag sage">Forecast verification</span>
+                                <span class="tag gold">Decision support</span>
+                            </div>
                         </div>
-                        <span class="toggle-icon">+</span>
-                    </summary>
-                    <div class="panel">
-                        <p>I develop forecasting systems that extend decision-making horizons for water managers from days to seasons. This work focuses on harmful algal blooms, where earlier warning can inform monitoring strategies, beach closings, and risk communication.</p>
-                        <span class="label">Contributions</span>
-                        <ul>
-                            <li>Sub-seasonal cyanobacteria forecasting for Lake Mendota <a href="https://doi.org/10.1016/j.hal.2021.102100" target="_blank">(Harmful Algae, 2021)</a></li>
-                            <li>Seasonal forecasting framework <a href="https://doi.org/10.1080/10402381.2022.2084799" target="_blank">(Lake & Reservoir Management, 2022)</a></li>
-                            <li>Regional extension to 178 lakes <a href="https://doi.org/10.1016/j.watres.2022.119402" target="_blank">(Water Research, 2023)</a></li>
-                            <li>Satellite pixel-scale forecasts for Florida lakes <a href="https://doi.org/10.1016/j.hal.2025.103041" target="_blank">(Harmful Algae, 2025)</a></li>
-                        </ul>
-                        <figure class="media-full media-feature">
-                            <figcaption>One of my projects is extending harmful algae forecasts in space. With satellite-based chlorophyll observations, forecasts can be developed at the pixel-scale.</figcaption>
-                            <figcaption>This animation highlights pixel-scale chlorophyll forecast performance across Florida lakes and shows how the inclusion of additional environmental data improve forecast skill over persistence.</figcaption>
-                            <img class="forecast-gif" src="florida_chl_accuracy_newdata.gif" alt="Animation of forecast accuracy across Florida lakes using new data">
-                            <figcaption>Click on the buttons below to learn about other facets of my HAB forecasting work.</figcaption>
-
+                        <figure class="media-panel">
+                            <img class="animation" src="florida_chl_accuracy_newdata.gif" alt="Animation of forecast accuracy across Florida lakes using environmental data">
+                            <figcaption class="caption">This animation highlights pixel-scale chlorophyll forecast performance across Florida lakes and shows how the inclusion of additional environmental data improve forecast skill over persistence.</figcaption>
                         </figure>
-                        <details class="inline-disclosure">
-                            <summary>Season-ahead Forecasts of Harmful Algae</summary>
-                            <div class="inline-disclosure-content">
-                                <div class="media-full">
-                                    <img src="WR_GraphicalAbstract.png" alt="Graphical abstract for forecasting and early warning systems">
-                                </div>
-                            </div>
-                        </details>
                     </div>
-                </details>
 
-                <details class="accordion-item" id="proj-remote-sensing">
-                    <summary>
-                        <div class="summary-text">
-                            <h2>2. Remote Sensing of Water Quality</h2>
-                            <p>Satellite-enabled retrievals of water quality indicators linked to field observations.</p>
+                    <div class="paper-list">
+                        <h3>Related Papers</h3>
+                        <article class="paper">
+                            <h4>Satellite pixel-scale forecasts for Florida lakes</h4>
+                            <p>Harmful Algae.</p>
+                            <div class="paper-meta">
+                                <span>2025</span>
+                                <a href="https://doi.org/10.1016/j.hal.2025.103041" target="_blank">DOI</a>
+                                <a href="Beal_Schaeffer.pdf" target="_blank">PDF</a>
+                            </div>
+                        </article>
+                        <article class="paper">
+                            <h4>Regional extension to 178 lakes</h4>
+                            <p>Water Research.</p>
+                            <div class="paper-meta">
+                                <span>2023</span>
+                                <a href="https://doi.org/10.1016/j.watres.2022.119402" target="_blank">DOI</a>
+                            </div>
+                        </article>
+                        <article class="paper">
+                            <h4>Seasonal forecasting framework</h4>
+                            <p>Lake &amp; Reservoir Management.</p>
+                            <div class="paper-meta">
+                                <span>2022</span>
+                                <a href="https://doi.org/10.1080/10402381.2022.2084799" target="_blank">DOI</a>
+                            </div>
+                        </article>
+                        <article class="paper">
+                            <h4>Sub-seasonal cyanobacteria forecasting for Lake Mendota</h4>
+                            <p>Harmful Algae.</p>
+                            <div class="paper-meta">
+                                <span>2021</span>
+                                <a href="https://doi.org/10.1016/j.hal.2021.102100" target="_blank">DOI</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="focus-section" id="remote-sensing">
+                <div class="section-header">
+                    <p class="section-kicker">Focus Area 02</p>
+                    <h2>Remote Sensing of Water Quality</h2>
+                    <p>Satellite-enabled retrievals of water quality indicators linked to field observations.</p>
+                </div>
+                <div class="section-body">
+                    <div class="split">
+                        <div class="text-block">
+                            <p>I combine satellite imagery with in-situ monitoring to retrieve algal pigments and dissolved oxygen, enabling scalable lake-wide water quality assessment. This work integrates Sentinel-2 and Sentinel-3 observations with machine learning models for robust, transferable workflows.</p>
+                            <p>At NASA, I am developing methods to merge ocean color data from multiple satellite platforms to generate a long term radiometry and chlorophyll-a timeseries for the coastal U.S.</p>
+                            <div class="tag-row">
+                                <span class="tag">Ocean color</span>
+                                <span class="tag sage">Machine learning</span>
+                                <span class="tag gold">Long-term products</span>
+                            </div>
                         </div>
-                        <span class="toggle-icon">+</span>
-                    </summary>
-                    <div class="panel">
-                        <p>I combine satellite imagery with in-situ monitoring to retrieve algal pigments and dissolved oxygen, enabling scalable lake-wide water quality assessment. This work integrates Sentinel-2 and Sentinel-3 observations with machine learning models for robust, transferable workflows.</p>
-                        <span class="label">Contribution</span>
-                        <ul>
-                            <li>Machine-learning retrievals of pigments and dissolved oxygen <a href="https://doi.org/10.1029/2023WR035744" target="_blank">(Water Resources Research, 2023)</a></li>
-                        </ul>
                         <div class="media-grid">
-                            <img src="RSWorkFlow.png" alt="Remote sensing workflow for lake water quality modeling">
-                            <img src="MendotaRSFig.jpg" alt="Lake Mendota remote sensing results">
+                            <figure class="media-panel">
+                                <img src="RSWorkFlow.png" alt="Remote sensing workflow for lake water quality modeling">
+                                <figcaption class="caption">Workflow for linking satellite observations with field measurements.</figcaption>
+                            </figure>
+                            <figure class="media-panel">
+                                <img src="MendotaRSFig.jpg" alt="Lake Mendota remote sensing results">
+                                <figcaption class="caption">Lake Mendota remote sensing model results.</figcaption>
+                            </figure>
                         </div>
-                        <details class="inline-disclosure">
-                            <summary>Merging Ocean Color Datasets</summary>
-                            <div class="inline-disclosure-content">
-                                <p>A placeholder for future work on combining ocean color products across sensors, platforms, or processing streams to support more consistent inland and coastal water quality analysis.</p>
-                                <ul>
-                                    <li>Datasets and sensors to be merged</li>
-                                    <li>Approach for harmonization or cross-calibration</li>
-                                    <li>Applications, products, or project outcomes</li>
-                                </ul>
+                    </div>
+
+                    <div class="paper-list">
+                        <h3>Related Papers</h3>
+                        <article class="paper">
+                            <h4>Machine-learning retrievals of pigments and dissolved oxygen</h4>
+                            <p>Water Resources Research.</p>
+                            <div class="paper-meta">
+                                <span>2024</span>
+                                <a href="https://doi.org/10.1029/2023WR035744" target="_blank">DOI</a>
                             </div>
-                        </details>
+                        </article>
                     </div>
-                </details>
+                </div>
+            </section>
 
-                <details class="accordion-item" id="proj-s2s">
-                    <summary>
-                        <div class="summary-text">
-                            <h2>3. Other Projects</h2>
-                            <p>Other research projects focused around hydroclimatology, forecasting, and ecological extremes.</p>
+            <section class="focus-section" id="ecosystem-extremes">
+                <div class="section-header">
+                    <p class="section-kicker">Focus Area 03</p>
+                    <h2>Hydroclimatology and Ecosystem Extremes</h2>
+                    <p>Other research projects focused around hydroclimatology, forecasting, and ecological extremes.</p>
+                </div>
+                <div class="section-body">
+                    <div class="split">
+                        <div class="text-block">
+                            <p>Hydroclimatology and subseasonal-to-seasonal forecasting can be applied to a wide variety of water- and ecology-related extremes. Below are some of my additional projects in this area.</p>
+                            <p>Dengue fever is a mosquito-borne viral disease rapidly creating a significant global public health burden, particularly in urban areas of tropical and sub-tropical countries. Using climate variables to predict dengue cases at longer, weeks to months, lead times may help improve preparation for dengue outbreaks.</p>
+                            <div class="tag-row">
+                                <span class="tag">Hydroclimatology</span>
+                                <span class="tag sage">S2S forecasting</span>
+                                <span class="tag gold">Public health</span>
+                            </div>
                         </div>
-                        <span class="toggle-icon">+</span>
-                    </summary>
-                    <div class="panel">
-                        <p>Hydroclimatology and subseasonal-to-seasonal forecasting can be applied to a wide variety of water- and ecology-related extremes. Below are some of my additional projects in this area.</p>
-                        <span class="label">Project Outline</span>
-                        <div class="project-outline">
-                            <section class="project-template">
-                                <h3>S2S Forecasting for Dengue Virus</h3>
-                                <p>Dengue fever is a mosquito-borne viral disease rapidly creating a significant global public health burden, particularly in urban areas of tropical and sub-tropical countries.
-                                    Using climate variables to predict dengue cases at longer (weeks to months) lead times may help improve preparation for dengue outbreaks.
-                                </p>
-                                <ul>
-                                    <li>We develop forecasts for DENV at 1‐, 3‐, and 6‐ month lead times for four cities across Colombia (Cali, Cúcuta, Medellín, and Leticia)</li>
-                                    <li>Results show that climate information is most useful for dengue forecasts at 3‐ and 6‐ month lead times</li>
-                                    <li>Evaluating Hydroclimate Information in Dengue Forecasting <a href="https://doi.org/10.1029/2024GH001325" target="_blank">(GeoHealth, 2024)</a></li>
-                                        <div class="media-full">
-                                        <img src="DengueGraphicalAbstract.jpg" alt="Beal et al. 2024 Graphical Abstract">
-                                        </div>
-                                </ul>
-                            </section>
-                            <section class="project-template">
-                                <h3>Project Title</h3>
-                                <p>Brief 1-2 sentence summary of the forecasting question, system, or application.</p>
-                                <ul>
-                                    <li>Motivation or management relevance</li>
-                                    <li>Forecast horizon, methods, or datasets</li>
-                                    <li>Main result, application, or paper link</li>
-                                </ul>
-                            </section>
-                        </div>
+                        <figure class="media-panel">
+                            <img src="DengueGraphicalAbstract.jpg" alt="Graphical abstract for dengue forecasting with hydroclimate information">
+                            <figcaption class="caption">Evaluating climate information for dengue forecasts across Colombian cities.</figcaption>
+                        </figure>
                     </div>
-                </details>
-            </div>
 
-            <p class="footer-link"><a href="index.html">Back to Home</a></p>
-            <img class="banner" src="Banner.png" alt="Research theme banner">
+                    <div class="paper-list">
+                        <h3>Related Papers</h3>
+                        <article class="paper">
+                            <h4>S2S forecasting for dengue virus</h4>
+                            <p>We develop forecasts for DENV at 1-, 3-, and 6-month lead times for four cities across Colombia: Cali, Cucuta, Medellin, and Leticia.</p>
+                            <div class="paper-meta">
+                                <span>2024</span>
+                                <a href="https://doi.org/10.1029/2024GH001325" target="_blank">DOI</a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="add-note">
+                        To add a new paper later, copy one of the <code>&lt;article class="paper"&gt;</code> blocks into the appropriate focus area and update the title, summary, year, and link.
+                    </div>
+                </div>
+            </section>
         </div>
     </div>
-</div>
+
+    <p class="footer-link"><a href="index.html">Back to Home</a></p>
+</main>
 
 <script>
 function toggleMenu() {
@@ -540,35 +605,6 @@ function toggleMenu() {
         menu.style.left = "0px";
     }
 }
-
-function openAccordionFromHash() {
-    if (!window.location.hash) return;
-    const target = document.querySelector(window.location.hash);
-    if (!target || target.tagName !== "DETAILS") return;
-    closeOtherAccordions(target);
-    target.open = true;
-    target.scrollIntoView({ behavior: "smooth", block: "start" });
-}
-
-function closeOtherAccordions(activeItem) {
-    const items = document.querySelectorAll(".accordion-item");
-    items.forEach((item) => {
-        if (item !== activeItem) item.open = false;
-    });
-}
-
-function enableSingleOpenAccordion() {
-    const items = document.querySelectorAll(".accordion-item");
-    items.forEach((item) => {
-        item.addEventListener("toggle", () => {
-            if (item.open) closeOtherAccordions(item);
-        });
-    });
-}
-
-enableSingleOpenAccordion();
-window.addEventListener("hashchange", openAccordionFromHash);
-window.addEventListener("load", openAccordionFromHash);
 </script>
 </body>
 </html>
