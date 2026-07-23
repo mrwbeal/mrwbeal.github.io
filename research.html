@@ -86,7 +86,7 @@ body {
 }
 
 .main {
-    max-width: 1540px;
+    max-width: 1760px;
     margin: 0 auto;
     padding: 96px 28px 44px;
 }
@@ -209,8 +209,8 @@ body {
 
 .split {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(380px, 1.08fr);
-    gap: 30px;
+    grid-template-columns: minmax(280px, 0.7fr) minmax(620px, 1.3fr);
+    gap: 36px;
     align-items: start;
 }
 
@@ -261,7 +261,7 @@ body {
 .media-panel img {
     display: block;
     width: 100%;
-    max-height: 520px;
+    max-height: 500px;
     object-fit: contain;
     border: 1px solid var(--line);
     border-radius: 8px;
@@ -269,13 +269,13 @@ body {
 }
 
 .media-panel img.animation {
-    max-height: 680px;
+    max-height: 900px;
 }
 
 .media-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 14px;
+    grid-template-columns: 1fr;
+    gap: 22px;
 }
 
 .caption {
@@ -366,6 +366,12 @@ a {
     font-weight: 600;
 }
 
+@media (max-width: 1280px) {
+    .split {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (max-width: 900px) {
     .research-shell {
         grid-template-columns: 1fr;
@@ -385,9 +391,6 @@ a {
         border-top: 1px solid var(--line);
     }
 
-    .split {
-        grid-template-columns: 1fr;
-    }
 }
 
 @media (max-width: 700px) {
@@ -456,11 +459,6 @@ a {
                         <div class="text-block">
                             <p>I develop forecasting systems that extend decision-making horizons for water managers from days to seasons. This work focuses on harmful algal blooms, where earlier warning can inform monitoring strategies, beach closings, and risk communication.</p>
                             <p>One of my projects is extending harmful algae forecasts in space. With satellite-based chlorophyll observations, forecasts can be developed at the pixel-scale.</p>
-                            <div class="tag-row">
-                                <span class="tag">Harmful algal blooms</span>
-                                <span class="tag sage">Forecast verification</span>
-                                <span class="tag gold">Decision support</span>
-                            </div>
                         </div>
                         <figure class="media-panel">
                             <img class="animation" src="florida_chl_accuracy_newdata.gif" alt="Animation of forecast accuracy across Florida lakes using environmental data">
@@ -518,17 +516,8 @@ a {
                         <div class="text-block">
                             <p>I combine satellite imagery with in-situ monitoring to retrieve algal pigments and dissolved oxygen, enabling scalable lake-wide water quality assessment. This work integrates Sentinel-2 and Sentinel-3 observations with machine learning models for robust, transferable workflows.</p>
                             <p>At NASA, I am developing methods to merge ocean color data from multiple satellite platforms to generate a long term radiometry and chlorophyll-a timeseries for the coastal U.S.</p>
-                            <div class="tag-row">
-                                <span class="tag">Ocean color</span>
-                                <span class="tag sage">Machine learning</span>
-                                <span class="tag gold">Long-term products</span>
-                            </div>
                         </div>
                         <div class="media-grid">
-                            <figure class="media-panel">
-                                <img src="RSWorkFlow.png" alt="Remote sensing workflow for lake water quality modeling">
-                                <figcaption class="caption">Workflow for linking satellite observations with field measurements.</figcaption>
-                            </figure>
                             <figure class="media-panel">
                                 <img src="MendotaRSFig.jpg" alt="Lake Mendota remote sensing results">
                                 <figcaption class="caption">Lake Mendota remote sensing model results.</figcaption>
@@ -561,11 +550,6 @@ a {
                         <div class="text-block">
                             <p>Hydroclimatology and subseasonal-to-seasonal forecasting can be applied to a wide variety of water- and ecology-related extremes. Below are some of my additional projects in this area.</p>
                             <p>Dengue fever is a mosquito-borne viral disease rapidly creating a significant global public health burden, particularly in urban areas of tropical and sub-tropical countries. Using climate variables to predict dengue cases at longer, weeks to months, lead times may help improve preparation for dengue outbreaks.</p>
-                            <div class="tag-row">
-                                <span class="tag">Hydroclimatology</span>
-                                <span class="tag sage">S2S forecasting</span>
-                                <span class="tag gold">Public health</span>
-                            </div>
                         </div>
                         <figure class="media-panel">
                             <img src="DengueGraphicalAbstract.jpg" alt="Graphical abstract for dengue forecasting with hydroclimate information">
